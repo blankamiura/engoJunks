@@ -36,7 +36,7 @@ func (*GameScene) Setup(world *ecs.World) {
   world.AddSystem(&common.RenderSystem{})
 
 	// Setting player
-	player 							 	 := Player{BasicEntity: ecs.NewBasic()}
+	player						 := Player{BasicEntity: ecs.NewBasic()}
 	/// Putting a texture on player
 	playerTexture, err := common.LoadedSprite("images/player.png")
 	if err != nil {
@@ -50,9 +50,9 @@ func (*GameScene) Setup(world *ecs.World) {
 	/// Setting SpaceComponent of player
 	/// SpaceComponent defines initial position and size of Objects
 	player.SpaceComponent		= common.SpaceComponent {
-		Position:	engo.Point{200-40, 200-50}, // Initial position
-		Width		:	80,													// Width of images
-		Height	: 100,												// Height of images
+		Position	:	engo.Point{200-40, 200-50}, // Initial position
+		Width			:	80,													// Width of images
+		Height		: 100,												// Height of images
 	}
 	/// Making player registering RenderSystem
 	for _, system := range world.Systems() {
