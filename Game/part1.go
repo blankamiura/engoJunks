@@ -15,8 +15,8 @@ type GameScene struct{}
 // Create an Entity "Player"
 type Player struct {
 	ecs.BasicEntity
-	common.RenderComponent
 	common.SpaceComponent
+	common.RenderComponent
 }
 
 // Setting GameScene's Type
