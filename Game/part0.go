@@ -21,7 +21,7 @@ func (*DefaultScene) Preload() {}
 // This is executed before entering main loop
 func (*DefaultScene) Setup(w *ecs.World) {
   // Making RenderSystem registering RenderSystem
-  // This System is neccesary for drawing background here
+  // This System is necessary for drawing background here
   w.AddSystem(&common.RenderSystem{})
 
   // Setting a white background
