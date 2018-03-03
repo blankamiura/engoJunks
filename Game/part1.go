@@ -15,8 +15,8 @@ type GameScene struct{}
 // Create an Entity "Player"
 type Player struct {
 	ecs.BasicEntity
-	common.SpaceComponent
 	common.RenderComponent
+	common.SpaceComponent
 }
 
 // Setting GameScene's Type
@@ -37,13 +37,6 @@ func (*GameScene) Setup(world *ecs.World) {
 
 	// Setting player
 	player 							 	 := Player{BasicEntity: ecs.NewBasic()}
-	/// Setting SpaceComponent of player
-	/// SpaceComponent defines initial position and size of Objects
-	player.SpaceComponent		= common.SpaceComponent {
-		Position:	engo.Point{200-40, 200-50}, // Initial position
-		Width		:	80,													// Width of images
-		Height	: 100,												// Height of images
-	}
 	/// Putting a texture on player
 	playerTexture, err := common.LoadedSprite("images/player.png")
 	if err != nil {
@@ -53,6 +46,13 @@ func (*GameScene) Setup(world *ecs.World) {
 	player.RenderComponent = common.RenderComponent {
 		Drawable	: playerTexture,
 		Scale			: engo.Point{1, 1},
+	}
+	/// Setting SpaceComponent of player
+	/// SpaceComponent defines initial position and size of Objects
+	player.SpaceComponent		= common.SpaceComponent {
+		Position:	engo.Point{200-40, 200-50}, // Initial position
+		Width		:	80,													// Width of images
+		Height	: 100,												// Height of images
 	}
 	/// Making player registering RenderSystem
 	for _, system := range world.Systems() {
