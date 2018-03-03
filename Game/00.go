@@ -37,9 +37,9 @@ func (*myScene) Setup(world *ecs.World) {
 
 	player 							 	 := Player{BasicEntity: ecs.NewBasic()}
 	player.SpaceComponent		= common.SpaceComponent {
-		Position:	engo.Point{100, 100},
-		Width		:	150,
-		Height	: 238,
+		Position:	engo.Point{100-20, 100-25},
+		Width		:	40,
+		Height	: 50,
 	}
 
 	playerTexture, err := common.LoadedSprite("images/player.png")
